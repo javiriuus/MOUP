@@ -67,7 +67,11 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
+<<<<<<< HEAD
   background-color: #003C4A;
+=======
+  background-color: rgb(229, 255, 0);
+>>>>>>> Mario
 }
 
 [tabindex="-1"]:focus {
