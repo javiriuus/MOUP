@@ -3728,6 +3728,7 @@ input[type="button"].btn-block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  color: var(--pink);
 }
 
 .input-group-prepend .btn,
