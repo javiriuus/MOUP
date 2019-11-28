@@ -3298,7 +3298,7 @@ input[type="button"].btn-block {
   color: #212529;
   text-align: left;
   list-style: none;
-  background-color: #fff;
+  background-color: #006075;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
@@ -6985,7 +6985,8 @@ button.bg-light:focus {
 }
 
 .bg-dark {
-  background-color: #343a40 !important;
+  /* background-color: #343a40 !important; */
+  background-color: #048ABF !important;
 }
 
 a.bg-dark:hover, a.bg-dark:focus,
@@ -10889,7 +10890,7 @@ footer.sticky-footer {
   bottom: 0;
   width: calc(100% - 90px);
   height: 80px;
-  background-color: #e9ecef;
+  background-color: #04587D;
 }
 
 footer.sticky-footer .copyright {
