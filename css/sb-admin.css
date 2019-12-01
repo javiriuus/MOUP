@@ -10,6 +10,57 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+
+ /*Estilos para cada uno de los leguajes de programación admitidos, todos ellos disponen de display none para seleccionar cuál se ve*/
+ #editor_js { 
+  display: none;
+  position: absolute;
+  top: 56px;
+  right: 0;
+  bottom: 80px;
+  left: 225px;
+}
+#editor_python{ 
+  display: none;
+  position: absolute;
+  top: 56px;
+  right: 0;
+  bottom: 80px;
+  left: 225px;
+}
+#editor_ruby{ 
+  display: none;
+  position: absolute;
+  top: 56px;
+  right: 0;
+  bottom: 80px;
+  left: 225px;
+}
+#editor_java{ 
+  display: none;
+  position: absolute;
+  top: 56px;
+  right: 0;
+  bottom: 80px;
+  left: 225px;
+}
+#editor_css{ 
+  /* display: none; */
+  position: absolute;
+  top: 56px;
+  right: 0;
+  bottom: 80px;
+  left: 225px;
+}
+#editor_swift{ 
+  display: none;
+  position: absolute;
+  top: 56px;
+  right: 0;
+  bottom: 80px;
+  left: 225px;
+}
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
