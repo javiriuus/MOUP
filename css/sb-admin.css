@@ -4451,16 +4451,26 @@ input[type="button"].btn-block {
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
+@font-face{
+  font-family: themillion;
+  src:url(../vendor/fontawesome-free/webfonts/SWATRG__.TTF);
+  
+}
+
 
 .navbar-brand {
   display: inline-block;
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
   margin-right: 1rem;
-  font-size: 1.25rem;
+  margin-left: 1rem;
+  font-size: 2rem;
   line-height: inherit;
   white-space: nowrap;
+  font-family: themillion;
 }
+
+
 
 .navbar-brand:hover, .navbar-brand:focus {
   text-decoration: none;
@@ -10901,6 +10911,7 @@ footer.sticky-footer {
 footer.sticky-footer .copyright {
   line-height: 1;
   font-size: 0.8rem;
+  color: rgb(179, 179, 179);
 }
 
 @media (min-width: 768px) {
