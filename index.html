@@ -112,11 +112,11 @@
         <ul class="sidebar navbar-nav" id="navigation">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span>C++</span>
+                    <span>Java</span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                    <a class="dropdown-item" href="login.html">Hello World</a>
-                    <a class="dropdown-item" href="login.html">Constructor</a>
+                    <a class="dropdown-item" onclick="openCode('hello', 'java');">Hello World</a>
+                    <a class="dropdown-item" onclick="openCode('const', 'java');">Constructor</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -124,17 +124,16 @@
                     <span>Python</span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                    <a class="dropdown-item" href="login.html">Hello World</a>
-                    <a class="dropdown-item" href="login.html">Constructor</a>
+                    <a class="dropdown-item" onclick="openCode('hello', 'python');">Hello World</a>
+                    <a class="dropdown-item" onclick="openCode('const', 'python');">Constructor</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span>Java</span>
+                    <span>CSS</span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                    <a class="dropdown-item" href="login.html">Hello World</a>
-                    <a class="dropdown-item" href="login.html">Constructor</a>
+                    <a class="dropdown-item" onclick="openCode('example', 'css');">Example</a>
                 </div>
             </li>
             <li class="nav-item dropdown" id="add" onclick="openForm('addLanguage');">
@@ -146,65 +145,27 @@
 
     <div id="content-wrapper">
       <!--Editores de código con cada uno de los lenguajes posibles Python, JavaScript, Ruby, Java, CSS, Swift-->
-         <div id="editor_python">
-        def: hello(name):
-            print("Hello! Nice to meet you " + name)
-            return name
-        </div>
-        <div id="editor_js">
-        function foo(items) {
-            var x = "All this is syntax highlighted";
-            return x;
-        }
-        </div>
-        <div id="editor_ruby">
-        =begin
-        This program will
-        print "Hello, world!".
-        =end
-             
-        puts 'Hello, world!'            
-        </div>
-        <div id="editor_java">
-        /* Este es un programa simple en Java...
-        NombreArchivo: "HelloWorld.java". */
          
-        class HelloWorld
-        {
-            // Tu programa comienza con una llamada a main().
-            // Imprime "Hola Mundo" a la ventana de la terminal.
-            public static void main(String args[])
-            {
-                System.out.println("Hola Mundo");
-            }
-        }         
+        <div id="editor">
+            <div id="codigo">
+                <div id="editor_java">
+                   /* Este es un programa simple en Java...
+                    NombreArchivo: "HelloWorld.java". */
+                    
+                    class HelloWorld
+                    {
+                        // Tu programa comienza con una llamada a main().
+                        // Imprime "Hola Mundo" a la ventana de la terminal.
+                        public static void main(String args[])
+                        {
+                            System.out.println("Hola Mundo");
+                        }
+                    } 
+                </div>
+            </div>
         </div>
-        <div id="editor_css">
-        html {
-            font-family: sans-serif;
-            line-height: 1.15;
-            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        }
-              
-        article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
-            display: block;
-        }
-              
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.5;
-            color: #212529;
-            text-align: left;   
-        }  
-        </div>
-        <div id="editor_swift">
-        // Hello, World! Program
-        import Swift
-        print("Hello, World!")
-        </div>
+        
+        
       <!-- Footer -->
       <footer class="sticky-footer">
         <div class="container my-auto">
@@ -265,6 +226,7 @@
                     <div class="popup_body">
                         <form id="addLanguageForm" method="post" name="addLanguageForm" id="new_event" enctype="multipart/form-data" target="_blank">
                             Lenguaje <input type="text" name="title" value="" required><br><br>
+                            Nombre <input type="text" name="nombre" value="" required><br><br>
                             <input type="button" value="Crear" onclick="createElem();">
                             <input type="button" value="Cancelar" onclick="cancel();">
                         </form>
