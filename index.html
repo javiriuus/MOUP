@@ -44,13 +44,16 @@
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.js"></script>
 
+
     <!-- Page level plugin JavaScript-->
-    <!-- <script src="vendor/chart.js/Chart.js"></script> -->
-    <!-- <script src="vendor/datatables/jquery.dataTables.js"></script> -->
-    <!-- <script src="vendor/datatables/dataTables.bootstrap4.js"></script> -->
+    <script src="vendor/chart.js/Chart.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin.js"></script>
+    
+    <script src="js/sb-admin.min.js"></script>
 
     <!-- Demo scripts for this page-->
     <!-- <script src="js/demo/datatables-demo.js"></script> -->
@@ -65,8 +68,7 @@
         <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
     </button>
-        <a class="navbar-brand mr-1" href="index.html">MOUP</a>
-
+        <a class="navbar-brand mr-1" href="index.html">moup</a>
 
         <!-- Navbar Search -->
         <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
@@ -108,7 +110,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="sidebar navbar-nav" id="navigation">
+        <ul class="sidebar navbar-nav" id="navigation" id="sortable">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span>Java</span>
@@ -118,7 +120,7 @@
                     <a class="dropdown-item" onclick="openCode('const', 'java');">Constructor</a>
                 </div>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown" id = "sortable">
                 <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span>Python</span>
                 </a>
@@ -170,11 +172,9 @@
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>Aviso de Privacidad</span>
-            &nbsp;&nbsp;
+
             <span>Cookies</span>
-            &nbsp;&nbsp;
             <span>Condiciones de uso</span>
-            &nbsp;&nbsp;
             <span>Copyright © 2012-2023 Moup.com Todos los derechos reservados</span>
           </div>
         </div>
@@ -193,7 +193,7 @@
                         <h5 class="modal-title " id="exampleModalLabel ">Ready to Leave?</h5>
                         <button class="close " type="button " data-dismiss="modal " aria-label="Close ">
                     <span aria-hidden="true ">×</span>
-                    </button>
+                  </button>
                             </div>
                             <div class="modal-body ">Select "Logout " below if you are ready to end your current session.</div>
                             <div class="modal-footer ">

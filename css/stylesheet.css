@@ -67,14 +67,14 @@
 }
  #editor_js { 
     position: absolute;
-    top: 56px;
+    top: 74px;
     right: 0;
     bottom: 80px;
     left: 225px;
   }
   #editor_python{ 
     position: absolute;
-    top: 56px;
+    top: 74px;
     right: 0;
     bottom: 80px;
     left: 225px;
@@ -82,14 +82,14 @@
 
   #editor_ruby{ 
     position: absolute;
-    top: 56px;
+    top: 74px;
     right: 0;
     bottom: 80px;
     left: 225px;
   }
   #editor_java{ 
     position: absolute;
-    top: 56px;
+    top: 74px;
     right: 0;
     bottom: 80px;
     left: 225px;
@@ -97,14 +97,14 @@
  
   #editor_css{ 
     position: absolute;
-    top: 56px;
+    top: 74px;
     right: 0;
     bottom: 80px;
     left: 225px;
   }
   #editor_swift{ 
     position: absolute;
-    top: 56px;
+    top: 74px;
     right: 0;
     bottom: 80px;
     left: 225px;

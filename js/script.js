@@ -390,3 +390,10 @@ function openCode(codigo, lenguaje){
 
     }
 }
+
+//Función para que se puedan mover los lenguages
+
+$( function() {
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+  } );
