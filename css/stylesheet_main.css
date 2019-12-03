@@ -1,0 +1,349 @@
+.overlay {
+    background: rgb(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    /*transition: opacity 500ms;
+    opacity: 0;*/
+}
+
+#addLanguage {
+    display: none;
+    z-index: 10;
+}
+
+
+/*#addLanguage:target {
+    display: block;
+}*/
+
+#addLanguageMain {
+    height: 250px;
+    width: fit-content;
+    background-color: #048ABF;
+    margin-left: 500px;
+    margin-top: 150px;
+    border-radius: 20px;
+}
+
+.popup_header {
+    height: fit-content;
+    margin-top: 20px;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popup_body {
+    padding: 10px 15px;
+    box-sizing: border-box;
+}
+
+.close_button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 2%;
+    color: #ffffff;
+    transition: 0.3s ease all;
+    text-decoration: none;
+}
+
+.close_button:hover {
+    color: black;
+    text-decoration: none;
+}
+ /*Estilos para cada uno de los leguajes de programación admitidos, todos ellos disponen de display none para seleccionar cuál se ve*/
+ #editor{
+  display: none;
+}
+ #editor_js { 
+    position: absolute;
+    top: 56px;
+    right: 0;
+    bottom: 80px;
+    left: 225px;
+  }
+  #editor_python{ 
+    position: absolute;
+    top: 56px;
+    right: 0;
+    bottom: 80px;
+    left: 225px;
+  }
+
+  #editor_ruby{ 
+    position: absolute;
+    top: 56px;
+    right: 0;
+    bottom: 80px;
+    left: 225px;
+  }
+  #editor_java{ 
+    position: absolute;
+    top: 56px;
+    right: 0;
+    bottom: 80px;
+    left: 225px;
+  }
+ 
+  #editor_css{ 
+    position: absolute;
+    top: 56px;
+    right: 0;
+    bottom: 80px;
+    left: 225px;
+  }
+  #editor_swift{ 
+    position: absolute;
+    top: 56px;
+    right: 0;
+    bottom: 80px;
+    left: 225px;
+  }
+  .footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+    background-color:#04587D;
+    color: white;
+    text-align: center;
+    align-items: center;
+  }
+  img{
+    position: fixed;
+    width: 50%; 
+    height: 90%;
+    left: 0;
+    top:0;
+  }
+  #main{
+    position: fixed;
+    width: 50%; 
+    height: 90%;
+    right: 0;
+    top:0;
+    background: linear-gradient( to right, rgba(4, 51, 71, 1), rgba(15, 118, 177, 1));
+    align-content: center;
+  }
+  .register{
+    background: #fff;
+    border-radius: 10px;
+    width: 90%;
+    box-sizing: border-box;
+    margin: 1%;
+    padding: 3%;
+    align-content: center;
+  }
+  #sign_in{
+    margin-top: 33%;
+  }
+  #enlace {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+  }
+  .div_footer{
+    margin-top: 2%;
+  }
+  span{
+    margin-left: 4%;
+    margin-right: 4%;
+  }
+  #enlace1 {
+    height: fit-content;
+    margin-left: 3%;
+    margin-right: 3%;
+    display: inline-flex;
+}
+.sep {
+  width: 100%;
+  height: 20%;
+} 
+.frase {
+  width: 100%;
+  height: 20%;
+} 
+a:link
+{
+  text-decoration:none;
+  color: azure;
+} 
+#frase{
+  color: #fff;
+  font-size: 30px;
+  
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+* {
+  box-sizing: inherit;
+  transition-property: all;
+  transition-duration: .6s;
+  transition-timing-function: ease;
+}
+
+html,
+body {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1em;
+  text-align: center;
+}
+@media (min-width: 600px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+h1 {
+  color: #fff;
+  font-size: 1.25em;
+  font-weight: 900;
+  margin: 0 0 2em;
+}
+@media (min-width: 450px) {
+  h1 {
+    font-size: 1.75em;
+  }
+}
+@media (min-width: 760px) {
+  h1 {
+    font-size: 3.25em;
+  }
+}
+@media (min-width: 900px) {
+  h1 {
+    font-size: 5.25em;
+    margin: 0 0 1em;
+  }
+}
+
+p {
+  color: #fff;
+  font-size: 12px;
+}
+@media (min-width: 600px) {
+  p {
+    left: 50%;
+    position: absolute;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    }
+}
+@media (max-height: 500px) {
+  p {
+    left: 0;
+    position: relative;
+    top: 0;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+p a {
+  background: rgba(255, 255, 255, 0);
+  border-bottom: 1px solid;
+  color: #fff;
+  line-height: 1.4;
+  padding: .25em;
+  text-decoration: none;
+}
+p a:hover {
+  background: white;
+  color: #04587D;
+}
+
+.btn {
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 45px;
+  margin: 0 0 2em;
+  max-width: 160px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+}
+@media (min-width: 600px) {
+  .btn {
+    margin: 0 1em 2em;
+  }
+}
+.btn:hover {
+  text-decoration: none;
+}
+
+.btn-1 {
+  background: #04587D;
+  font-weight: 100;
+  margin-left: auto;
+  margin-right: auto;
+}
+.btn-1 svg {
+  height: 45px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.btn-1 rect {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-dasharray: 422, 0;
+  transition: all 0.35s linear;
+}
+
+.btn-1:hover {
+  background: rgba(225, 51, 45, 0);
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+.btn-1:hover rect {
+  stroke-width: 5;
+  stroke-dasharray: 15, 310;
+  stroke-dashoffset: 48;
+  transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+
+
+  
