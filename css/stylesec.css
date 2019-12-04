@@ -1,0 +1,36 @@
+
+#content-wrapper .seccion h1{
+    /**color:#AEB3BF;**/
+    color: #212529;
+    /**color: #667380;**/
+    /**color: #15215C;**/
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-size: 30px;
+    
+}
+#content-wrapper .seccion h2{
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    /**color: #667380;**/
+    color: #DCE6DC;
+    /**background: #0A0A0A;**/
+    font-size: 15px;
+}
+#content-wrapper .seccion p{
+    color:#CDD3E2;
+    margin-left: 20px;
+    font-size: 15px;
+    margin-bottom: 40px;
+    margin-right: 20px;
+}
+#content-wrapper #titulo p{
+    text-align: center;
+    font-size: 50px;
+    /**color: #212529;**/
+    color:#AEB3BF;
+    margin-right: 20px;
+}

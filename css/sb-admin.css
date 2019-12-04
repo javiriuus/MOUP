@@ -10,7 +10,7 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-:root {
+ :root {
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -67,11 +67,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-<<<<<<< HEAD
   background-color: #003C4A;
-=======
-  background-color: rgb(229, 255, 0);
->>>>>>> Mario
 }
 
 [tabindex="-1"]:focus {
@@ -2618,8 +2614,8 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: #00e1ff;
+  border-color: #00aac05b;
 }
 
 .btn-primary:hover {
@@ -4888,7 +4884,7 @@ input[type="button"].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: rgba(0, 35, 49, 0.26);
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;

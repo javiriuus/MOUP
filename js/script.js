@@ -1,3 +1,5 @@
+var vacioPython = `<div id="codigo"><div id="editor_python">
+</div></div>`;
 var helloPython = `<div id="codigo"><div id="editor_python">def: hello(name):
 print("Hello! Nice to meet you " + name)
 return name;
@@ -23,6 +25,9 @@ otra_mascota = Mascota("Snowball", 1)
 otra_mascota.saludar()
 </div></div>`;
 
+var vacioJS = `<div id="codigo"><div id="editor_js">
+</div></div>`;
+
 var helloJS = `<div id="codigo"><div id="editor_js">alert( 'Hello, world!' );</div></div>`;
 
 var constructorJS = `<div id="codigo"><div id="editor_js">class Square extends Polygon {
@@ -45,6 +50,9 @@ var constructorJS = `<div id="codigo"><div id="editor_js">class Square extends P
       this.area = value;
     } 
   }
+  </div></div>`;
+
+  var vacioRuby = `<div id="codigo"><div id="editor_ruby">
   </div></div>`;
 
   var helloRuby = `<div id="codigo"><div id="editor_ruby">=begin
@@ -80,7 +88,12 @@ var constructorJS = `<div id="codigo"><div id="editor_js">class Square extends P
   obj1.display()
   </div></div> `;
 
-   var helloJava = `<div id="codigo">
+var vacioJava = `<div id="codigo"><div id="editor_java">
+  </div></div>`;
+
+var helloJava = `
+   <div id="codigo">
+              
    <div id="editor_java">
       /* Este es un programa simple en Java...
        NombreArchivo: "HelloWorld.java". */
@@ -97,7 +110,7 @@ var constructorJS = `<div id="codigo"><div id="editor_js">class Square extends P
    </div>
 </div>`;
 
-   var constructorJava = `<div id="codigo">
+var constructorJava = `<div id="codigo">
    <div id="editor_java">
    public class Employee {
 
@@ -123,7 +136,10 @@ var constructorJS = `<div id="codigo"><div id="editor_js">class Square extends P
    </div>
 </div>`;
 
-    var css = `<div id="codigo">
+var vacioCss = `<div id="codigo"><div id="editor_css">
+</div></div>`;
+
+var css = `<div id="codigo">
     <div id="editor_css">
     html {
         font-family: sans-serif;
@@ -147,169 +163,171 @@ var constructorJS = `<div id="codigo"><div id="editor_js">class Square extends P
     </div>
     </div>`;
 
-    var swift = `<div id="codigo"><div id="editor_swift">
+var vacioSwift = `<div id="codigo"><div id="editor_swift">
+    </div></div>`;
+
+var swift = `<div id="codigo"><div id="editor_swift">
     // Hello, World! Program
     import Swift
     print("Hello, World!")
     </div></div>`;
 
-function openForm(value) { //Abre el formulario
-    var elem = document.getElementById("addLanguage");
+
+var languageAux = ''; //Variable para almacenar el lenguaje del repositorio de codigo a editar
+var count = 3; //Contador de repositorios de codigo
+var isParent = ''; //Variable para almacenar que repositorio de codigo vamos a editar
+var idCurrent = ''; //Variable para almacenar qué boton de añadir hemos pulsado
+
+function openForm(value, language, id) { //Abre el formulario
+    var elem = document.getElementById(value);
     elem.style.display = "block";
+    languageAux = language;
+    idCurrent = 'addCode'+id+'';
+    idParent = 'code'+id+'';
 }
 
-function cancel() {
-    document.getElementById("addLanguageForm").reset();
-    var elem = document.getElementById("addLanguage");
+function cancel(idForm, idDiv) {
+    document.getElementById(idForm).reset();
+    var elem = document.getElementById(idDiv);
     elem.style.display = "none";
+}
+
+function createCode(){
+    var nombre = document.addCodeForm.nombre.value;
+    var current = document.getElementById(idCurrent);
+    
+    var newA = document.createElement('a');
+    newA.setAttribute('class', 'dropdown-item');
+    if(languageAux=='java'){
+        newA.setAttribute('onclick', `openCode('vacio', 'java');`);
+    }else if(languageAux=='python'){
+        newA.setAttribute('onclick', `openCode('vacio', 'python');`);
+    }else if(languageAux=='js'){
+        newA.setAttribute('onclick', `openCode('vacio', 'js');`);
+    }else if(languageAux='css'){
+        newA.setAttribute('onclick', `openCode('vacio', 'css');`);
+    }else if(languageAux='ruby'){
+        newA.setAttribute('onclick', `openCode('vacio', 'ruby');`);
+    }else{
+        newA.setAttribute('onclick', `openCode('vacio', 'swift');`);
+    }
+    newA.innerHTML = nombre;
+    document.getElementById(idParent).insertBefore(newA, current);  
+    document.getElementById("addCodeForm").reset();
+    var elem = document.getElementById("addCode");
+    elem.style.display = "none";  
 }
 
 function createElem() {
     var lenguaje = document.addLanguageForm.title.value;
     var nombre = document.addLanguageForm.nombre.value;
-
-    if (lenguaje == 'Python') {
-        var newLi = document.createElement('li');
-        newLi.setAttribute('class', 'nav-item dropdown');
-        newLi.innerHTML = `<a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span>` + nombre + `</span>
+    var newLi = document.createElement('li');
+    count=count+1;
+    newLi.setAttribute('class', 'nav-item dropdown');
+    
+    if (lenguaje.toUpperCase() == 'PYTHON') {
+        newLi.innerHTML = `<a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <span>`+nombre+`</span>
     </a>
-    <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-        <a class="dropdown-item" onclick="openCode('hello', 'python');>Hello World</a>
-        <a class="dropdown-item" onclick="openCode('const', 'python');>Constructor</a>
+    <div class="dropdown-menu" id='code`+count+`' aria-labelledby="pagesDropdown">
+        <a class="dropdown-item" onclick="openCode('hello', 'python');">Hello World</a>
+        <a class="dropdown-item" onclick="openCode('const', 'python');">Constructor</a>
+        <a class="dropdown-item" id="addCode`+count+`" onclick="openForm('addCode', 'python', '`+count+`');">+ AÑADIR</a>
     </div>`;
-        var current = document.getElementById('add');
-        document.getElementById('navigation').insertBefore(newLi, current);
-        document.getElementById("addLanguageForm").reset();
-        var elem = document.getElementById("addLanguage");
-        elem.style.display = "none";
-
-    } else if (lenguaje == 'Java') {
-        var newLi = document.createElement('li');
-        newLi.setAttribute('class', 'nav-item dropdown');
-        newLi.innerHTML = `<a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span>` + nombre + `</span>
+    } else if (lenguaje.toUpperCase() == 'JAVA') {
+        newLi.innerHTML = `<a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <span>`+nombre+`</span>
     </a>
-    <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+    <div class="dropdown-menu" id='code`+count+`' aria-labelledby="pagesDropdown">
         <a class="dropdown-item" onclick="openCode('hello', 'java');">Hello World</a>
         <a class="dropdown-item" onclick="openCode('const', 'java');">Constructor</a>
+        <a class="dropdown-item" id="addCode`+count+`" onclick="openForm('addCode', 'java', '`+count+`');">+ AÑADIR</a>
     </div>`;
-        var current = document.getElementById('add');
-        document.getElementById('navigation').insertBefore(newLi, current);
-        document.getElementById("addLanguageForm").reset();
-        var elem = document.getElementById("addLanguage");
-        elem.style.display = "none";
-
-    } else if (lenguaje == 'JavaScript' || lenguaje == 'Java Script') {
-
-        var newLi = document.createElement('li');
-        newLi.setAttribute('class', 'nav-item dropdown');
-        newLi.innerHTML = `<a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span>` + nombre + `</span>
+    } else if (lenguaje.toUpperCase() == 'JAVASCRIPT' || lenguaje.toUpperCase() == 'JAVA SCRIPT') {
+        newLi.innerHTML = `<a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <span>`+nombre+`</span>
     </a>
-    <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+    <div class="dropdown-menu" id='code`+count+`' aria-labelledby="pagesDropdown">
         <a class="dropdown-item" onclick="openCode('hello', 'js');">Hello World</a>
         <a class="dropdown-item" onclick="openCode('const', 'js');">Constructor</a>
+        <a class="dropdown-item" id="addCode`+count+`" onclick="openForm('addCode', 'js', '`+count+`');">+ AÑADIR</a>
     </div>`;
-        var current = document.getElementById('add');
-        document.getElementById('navigation').insertBefore(newLi, current);
-        document.getElementById("addLanguageForm").reset();
-        var elem = document.getElementById("addLanguage");
-        elem.style.display = "none";
 
-    } else if (lenguaje == 'CSS') {
-
-        var newLi = document.createElement('li');
-        newLi.setAttribute('class', 'nav-item dropdown');
-        newLi.innerHTML = `<a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span>` + nombre + `</span>
+    } else if (lenguaje.toUpperCase() == 'CSS') {
+        newLi.innerHTML = `<a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <span>`+nombre+`</span>
     </a>
-    <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-        <a class="dropdown-item" onclick="openCode('example', 'css');">Example</a>
+    <div class="dropdown-menu" id='code`+count+`' aria-labelledby="pagesDropdown">
+        <a class="dropdown-item" onclick="openCode('hello', 'css');">Hello World</a>
+        <a class="dropdown-item" onclick="openCode('const', 'css');">Constructor</a>
+        <a class="dropdown-item" id="addCode`+count+`" onclick="openForm('addCode', 'css', '`+count+`');">+ AÑADIR</a>
     </div>`;
-        var current = document.getElementById('add');
-        document.getElementById('navigation').insertBefore(newLi, current);
-        document.getElementById("addLanguageForm").reset();
-        var elem = document.getElementById("addLanguage");
-        elem.style.display = "none";
-
-    } else if (lenguaje == 'Ruby') {
-
-        var newLi = document.createElement('li');
-        newLi.setAttribute('class', 'nav-item dropdown');
-        newLi.innerHTML = `<a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span>` + nombre + `</span>
+    } else if (lenguaje.toUpperCase() == 'RUBY') {
+        newLi.innerHTML =`<a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <span>`+nombre+`</span>
     </a>
-    <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+    <div class="dropdown-menu" id='code`+count+`' aria-labelledby="pagesDropdown">
         <a class="dropdown-item" onclick="openCode('hello', 'ruby');">Hello World</a>
-        <a class="dropdown-item" onclick="openCode('const, 'ruby');">Constructor</a>
+        <a class="dropdown-item" onclick="openCode('const', 'ruby');">Constructor</a>
+        <a class="dropdown-item" id="addCode`+count+`" onclick="openForm('addCode', 'ruby', '`+count+`');">+ AÑADIR</a>
     </div>`;
-        var current = document.getElementById('add');
-        document.getElementById('navigation').insertBefore(newLi, current);
-        document.getElementById("addLanguageForm").reset();
-        var elem = document.getElementById("addLanguage");
-        elem.style.display = "none";
-
-    } else if (lenguaje == 'swift') {
-
-        var newLi = document.createElement('li');
-        newLi.setAttribute('class', 'nav-item dropdown');
-        newLi.innerHTML = `<a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span>` + nombre + `</span>
+    } else if (lenguaje.toUpperCase() == 'SWIFT') {
+        newLi.innerHTML = `<a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <span>`+nombre+`</span>
     </a>
-    <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-        <a class="dropdown-item" onclick="openCode('example', 'swift');">Example</a>
+    <div class="dropdown-menu" id='code`+count+`' aria-labelledby="pagesDropdown">
+        <a class="dropdown-item" onclick="openCode('hello', 'swift');">Hello World</a>
+        <a class="dropdown-item" onclick="openCode('const', 'swift');">Constructor</a>
+        <a class="dropdown-item" id="addCode`+count+`" onclick="openForm('addCode', 'swift', '`+count+`');">+ AÑADIR</a>
     </div>`;
-        var current = document.getElementById('add');
-        document.getElementById('navigation').insertBefore(newLi, current);
-        document.getElementById("addLanguageForm").reset();
-        var elem = document.getElementById("addLanguage");
-        elem.style.display = "none";
-
     }else {
-
-        var newLi = document.createElement('li');
-        newLi.setAttribute('class', 'nav-item dropdown');
-        newLi.innerHTML = `<a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span>` + nombre + `</span>
+        newLi.innerHTML = `<a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <span>`+nombre+`</span>
     </a>
-    <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+    <div class="dropdown-menu" id='code`+count+`' aria-labelledby="pagesDropdown">
         <a class="dropdown-item" onclick="openCode('hello', 'java');">Hello World</a>
         <a class="dropdown-item" onclick="openCode('const', 'java');">Constructor</a>
+        <a class="dropdown-item" id="addCode`+count+`" onclick="openForm('addCode', 'java', '`+count+`');">+ AÑADIR</a>
     </div>`;
-        var current = document.getElementById('add');
+    }
+    var current = document.getElementById('add');
         document.getElementById('navigation').insertBefore(newLi, current);
         document.getElementById("addLanguageForm").reset();
         var elem = document.getElementById("addLanguage");
         elem.style.display = "none";
-
-    }
 }
 //Configuraciones y llamadas a los ditintos modos del editor, que proporcionan soporte para cada uno de los lenguajes admitidos
 //Hemos decidido dar soporte a los lenguajes Python, Javascript, Ruby, Java, Css y Swift
-window.eh = ace.edit("editor_python");
-eh.setTheme("ace/theme/cobalt");
-eh.session.setMode("ace/mode/python");
+// window.eh = ace.edit("editor_python");
+// eh.setTheme("ace/theme/cobalt");
+// eh.session.setMode("ace/mode/python");
 
-window.ec = ace.edit("editor_js");
-ec.setTheme("ace/theme/cobalt");
-ec.session.setMode("ace/mode/javascript");
+// window.ec = ace.edit("editor_js");
+// ec.setTheme("ace/theme/cobalt");
+// ec.session.setMode("ace/mode/javascript");
 
-window.eh = ace.edit("editor_ruby");
-eh.setTheme("ace/theme/cobalt");
-eh.session.setMode("ace/mode/ruby");
+// window.eh = ace.edit("editor_ruby");
+// eh.setTheme("ace/theme/cobalt");
+// eh.session.setMode("ace/mode/ruby");
 
-window.eh = ace.edit("editor_java");
-eh.setTheme("ace/theme/cobalt");
-eh.session.setMode("ace/mode/java");
+// window.eh = ace.edit("editor_java");
+// eh.setTheme("ace/theme/cobalt");
+// eh.session.setMode("ace/mode/java");
 
-window.eh = ace.edit("editor_css");
-eh.setTheme("ace/theme/cobalt");
-eh.session.setMode("ace/mode/css");
+// window.eh = ace.edit("editor_css");
+// eh.setTheme("ace/theme/cobalt");
+// eh.session.setMode("ace/mode/css");
 
-window.eh = ace.edit("editor_swift");
-eh.setTheme("ace/theme/cobalt");
-eh.session.setMode("ace/mode/swift");
+// window.eh = ace.edit("editor_swift");
+// eh.setTheme("ace/theme/cobalt");
+// eh.session.setMode("ace/mode/swift");
 
 //Funcion para mostrar el codigo
 function openCode(codigo, lenguaje){
@@ -325,7 +343,7 @@ function openCode(codigo, lenguaje){
         }else if(codigo=='const'){
             elem.innerHTML=constructorJava;
         }else{
-
+            elem.innerHTML=vacioJava;
         }
         window.eh = ace.edit("editor_java");
         eh.setTheme("ace/theme/cobalt");
@@ -338,18 +356,17 @@ function openCode(codigo, lenguaje){
         }else if(codigo=='const'){
             elem.innerHTML=constructorPython;
         }else{
-            
+            elem.innerHTML=vacioPython;
         }
         window.eh = ace.edit("editor_python");
         eh.setTheme("ace/theme/cobalt");
         eh.session.setMode("ace/mode/python");
-    }else if(lenguaje =='css'){
-        if(codigo='example'){
+    }else if(lenguaje == 'css'){
+        if(codigo=='example'){
             elem.innerHTML=css;
         }else{
-
+            elem.innerHTML=vacioCss;
         }
-        
         window.eh = ace.edit("editor_css");
         eh.setTheme("ace/theme/cobalt");
         eh.session.setMode("ace/mode/css");
@@ -360,7 +377,7 @@ function openCode(codigo, lenguaje){
         } else if(codigo=='const'){
             elem.innerHTML=constructorRuby;
         }else{
-
+            elem.innerHTML=vacioRuby;
         }
         window.eh = ace.edit("editor_ruby");
         eh.setTheme("ace/theme/cobalt");
@@ -372,16 +389,16 @@ function openCode(codigo, lenguaje){
         } else if(codigo=='const'){
             elem.innerHTML=constructorJS;
         }else{
-
+            elem.innerHTML=vacioJS; 
         }
         window.ec = ace.edit("editor_js");
         ec.setTheme("ace/theme/cobalt");
         ec.session.setMode("ace/mode/javascript");
-    }else if(lenguaje =='siwft'){
+    }else if(lenguaje =='swift'){
         if(codigo='example'){
         elem.innerHTML=swift;
         }else{
-
+            elem.innerHTML=vacioSwift;
         }
         window.eh = ace.edit("editor_swift");
         eh.setTheme("ace/theme/cobalt");
@@ -390,3 +407,5 @@ function openCode(codigo, lenguaje){
 
     }
 }
+
+

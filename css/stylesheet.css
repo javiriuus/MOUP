@@ -1,3 +1,16 @@
+a:link {
+  color:rgb(179, 179, 179);
+}
+a:visited {
+  color:rgb(179, 179, 179);
+}
+a:active {
+  color:rgb(179, 179, 179);
+}
+a:hover {
+  color:rgb(179, 179, 179);
+}
+
 .overlay {
     background: rgb(0, 0, 0, 0.5);
     position: fixed;
@@ -16,6 +29,11 @@
     z-index: 10;
 }
 
+#addCode {
+  display: none;
+  z-index: 10;
+}
+
 
 /*#addLanguage:target {
     display: block;
@@ -28,6 +46,15 @@
     margin-left: 500px;
     margin-top: 150px;
     border-radius: 20px;
+}
+
+#addCodeMain {
+  height: 200px;
+  width: fit-content;
+  background-color: #048ABF;
+  margin-left: 500px;
+  margin-top: 150px;
+  border-radius: 20px;
 }
 
 .popup_header {
@@ -65,48 +92,50 @@
  #editor{
   display: none;
 }
- #editor_js { 
-    position: absolute;
-    top: 56px;
-    right: 0;
-    bottom: 80px;
-    left: 225px;
-  }
-  #editor_python{ 
-    position: absolute;
-    top: 56px;
-    right: 0;
-    bottom: 80px;
-    left: 225px;
-  }
 
-  #editor_ruby{ 
-    position: absolute;
-    top: 56px;
-    right: 0;
-    bottom: 80px;
-    left: 225px;
-  }
-  #editor_java{ 
-    position: absolute;
-    top: 56px;
-    right: 0;
-    bottom: 80px;
-    left: 225px;
-  }
- 
-  #editor_css{ 
-    position: absolute;
-    top: 56px;
-    right: 0;
-    bottom: 80px;
-    left: 225px;
-  }
-  #editor_swift{ 
-    position: absolute;
-    top: 56px;
-    right: 0;
-    bottom: 80px;
-    left: 225px;
-  }
+#editor_js { 
+  width: calc(100% - 20px);
+  position: absolute;
+  top: 74px;
+  /*right: 0;*/
+  bottom: 80px;
+  /* left: 225px; */
+}
+#editor_python{ 
+  position: absolute;
+  top: 74px;
+  right: 0;
+  bottom: 80px;
+  left: 225px;
+}
+
+#editor_ruby{ 
+  position: absolute;
+  top: 74px;
+  right: 0;
+  bottom: 80px;
+  left: 225px;
+}
+#editor_java{ 
+  position: absolute;
+  top: 74px;
+  /* right: 0; */
+  bottom: 80px;
+  /* left: 225px; */
+}
+
+#editor_css{ 
+  position: absolute;
+  top: 74px;
+  right: 0;
+  bottom: 80px;
+  left: 225px;
+}
+#editor_swift{ 
+  position: absolute;
+  top: 74px;
+  right: 0;
+  bottom: 80px;
+  left: 225px;
+}
   

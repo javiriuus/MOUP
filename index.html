@@ -29,7 +29,7 @@
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
     <!-- Page level plugin CSS-->
-    <!-- <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet"> -->
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin.css" rel="stylesheet">
@@ -45,15 +45,15 @@
     <script src="vendor/jquery-easing/jquery.easing.js"></script>
 
     <!-- Page level plugin JavaScript-->
-    <!-- <script src="vendor/chart.js/Chart.js"></script> -->
-    <!-- <script src="vendor/datatables/jquery.dataTables.js"></script> -->
-    <!-- <script src="vendor/datatables/dataTables.bootstrap4.js"></script> -->
+    <script src="vendor/chart.js/Chart.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin.js"></script>
 
     <!-- Demo scripts for this page-->
-    <!-- <script src="js/demo/datatables-demo.js"></script> -->
+    <script src="js/demo/datatables-demo.js"></script>
     <script src="js/demo/chart-area-demo.js"></script>
 
 </head>
@@ -63,19 +63,20 @@
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
         <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
-      <i class="fas fa-bars"></i>
-    </button>
+            <i class="fas fa-bars"></i>
+        </button>
         <a class="navbar-brand mr-1" href="index.html">MOUP</a>
 
 
         <!-- Navbar Search -->
         <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                <input type="text" class="form-control" placeholder="Search for..." aria-label="Search"
+                    aria-describedby="basic-addon2">
                 <div class="input-group-append">
                     <button class="btn btn-primary" type="button">
-            <i class="fas fa-search"></i>
-          </button>
+                        <i class="fas fa-search"></i>
+                    </button>
                 </div>
             </div>
         </form>
@@ -83,23 +84,24 @@
         <!-- Navbar -->
         <ul class="navbar-nav ml-auto ml-md-0">
             <li class="nav-item dropdown no-arrow mx-1">
-                <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-envelope fa-fw"></i>
-                    <span class="badge badge-danger">7</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
                     <a class="dropdown-item" href="#">Contacta con nosotros</a>
                     <a class="dropdown-item" href="#">Reportar errores</a>
-                    <a class="dropdown-item" href="#">Preguntas Frecuentes</a>
+                    <a class="dropdown-item" href="fq.html">Preguntas Frecuentes</a>
                 </div>
             </li>
             <li class="nav-item dropdown no-arrow">
-                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-user-circle fa-fw"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                     <a class="dropdown-item" href="#">Opciones</a>
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Cerrar Sesión</a>
+                    <a class="dropdown-item" href="main.html">Cerrar Sesión</a>
                 </div>
             </li>
         </ul>
@@ -111,29 +113,35 @@
         <!-- Sidebar -->
         <ul class="sidebar navbar-nav" id="navigation">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
                     <span>Java</span>
                 </a>
-                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                <div class="dropdown-menu" id='code1' aria-labelledby="pagesDropdown">
                     <a class="dropdown-item" onclick="openCode('hello', 'java');">Hello World</a>
                     <a class="dropdown-item" onclick="openCode('const', 'java');">Constructor</a>
+                    <a class="dropdown-item" id="addCode1" onclick="openForm('addCode', 'java', '1');">+ AÑADIR</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
                     <span>Python</span>
                 </a>
-                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                <div class="dropdown-menu" id='code2' aria-labelledby="pagesDropdown">
                     <a class="dropdown-item" onclick="openCode('hello', 'python');">Hello World</a>
                     <a class="dropdown-item" onclick="openCode('const', 'python');">Constructor</a>
+                    <a class="dropdown-item" id="addCode2" onclick="openForm('addCode', 'python', '2');">+ AÑADIR</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
                     <span>CSS</span>
                 </a>
-                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                <div class="dropdown-menu" id='code3' aria-labelledby="pagesDropdown">
                     <a class="dropdown-item" onclick="openCode('example', 'css');">Example</a>
+                    <a class="dropdown-item" id="addCode3" onclick="openForm('addCode', 'css', '3');">+ AÑADIR</a>
                 </div>
             </li>
             <li class="nav-item dropdown" id="add" onclick="openForm('addLanguage');">
@@ -143,109 +151,123 @@
             </li>
         </ul>
 
-    <div id="content-wrapper">
-      <!--Editores de código con cada uno de los lenguajes posibles Python, JavaScript, Ruby, Java, CSS, Swift-->
-         
-        <div id="editor">
-            <div id="codigo">
-                <div id="editor_java">
-                   /* Este es un programa simple en Java...
-                    NombreArchivo: "HelloWorld.java". */
-                    
-                    class HelloWorld
-                    {
+        <div id="content-wrapper">
+            <!--Editores de código con cada uno de los lenguajes posibles Python, JavaScript, Ruby, Java, CSS, Swift-->
+
+            <div id="editor">
+                <div class="popup_header">
+                    <a href="#" class="close_button" onclick="cancel()">&times;</a>
+                    <!--Cierre del Pop-Up, con símbolo de cierre X-->
+                </div>
+                <div id="codigo">
+                    <div id="editor_java">
+                        /* Este es un programa simple en Java...
+                        NombreArchivo: "HelloWorld.java". */
+
+                        class HelloWorld
+                        {
                         // Tu programa comienza con una llamada a main().
                         // Imprime "Hola Mundo" a la ventana de la terminal.
                         public static void main(String args[])
                         {
-                            System.out.println("Hola Mundo");
+                        System.out.println("Hola Mundo");
                         }
-                    } 
+                        }
+                    </div>
                 </div>
             </div>
         </div>
-        
-        
-      <!-- Footer -->
-      <footer class="sticky-footer">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Aviso de Privacidad</span>
-            <span>Cookies</span>
-            <span>Condiciones de uso</span>
-            <span>Copyright © 2012-2023 Moup.com Todos los derechos reservados</span>
-          </div>
-        </div>
-        <!-- /.content-wrapper -->
 
-            <!-- Footer -->
-            <footer class="sticky-footer ">
-                <div class="container my-auto ">
-                    <div class="copyright text-center my-auto ">
-                        <span>Aviso de Privacidad</span>
-                        <span>Cookies</span>
-                        <span>Condiciones de uso</span>
-                        <span>Copyright © 2012-2023 Moup.com Todos los derechos reservados</span>
-                    </div>
+        <!-- Footer -->
+        <footer class="sticky-footer">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span><a id="politica"  href="politica.html">Aviso de Privacidad</a></span>&nbsp;&nbsp;
+                    <span>Cookies</span>&nbsp;&nbsp;
+                    <span>Condiciones de uso</span>&nbsp;&nbsp;
+                    <span>Copyright © 2012-2023 Moup.com Todos los derechos reservados</span>
                 </div>
-                <!-- /#wrapper -->
+            </div>
 
-                <!-- Botón para ir arriba del todo-->
-                <a class="scroll-to-top rounded " href="#page-top ">
-                    <i class="fas fa-angle-up "></i>
-                </a>
+            
+            <!-- Botón para ir arriba del todo-->
+            <a class="scroll-to-top rounded " href="#page-top ">
+                <i class="fas fa-angle-up "></i>
+            </a>
 
-                <!-- Logout Modal-->
-                <div class="modal fade " id="logoutModal " tabindex="-1 " role="dialog " aria-labelledby="exampleModalLabel " aria-hidden="true ">
-                    <div class="modal-dialog " role="document ">
-                        <div class="modal-content ">
-                            <div class="modal-header ">
-                                <h5 class="modal-title " id="exampleModalLabel ">Ready to Leave?</h5>
-                                <button class="close " type="button " data-dismiss="modal " aria-label="Close ">
-            <span aria-hidden="true ">×</span>
-          </button>
-                            </div>
-                            <div class="modal-body ">Select "Logout " below if you are ready to end your current session.</div>
-                            <div class="modal-footer ">
-                                <button class="btn btn-secondary " type="button " data-dismiss="modal ">Cancel</button>
-                                <a class="btn btn-primary " href="login.html ">Logout</a>
-                            </div>
+            <!-- Logout Modal-->
+            <div class="modal fade " id="logoutModal " tabindex="-1 " role="dialog "
+                aria-labelledby="exampleModalLabel " aria-hidden="true ">
+                <div class="modal-dialog " role="document ">
+                    <div class="modal-content ">
+                        <div class="modal-header ">
+                            <h5 class="modal-title " id="exampleModalLabel ">Ready to Leave?</h5>
+                            <button class="close " type="button " data-dismiss="modal " aria-label="Close ">
+                                <span aria-hidden="true ">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body ">Select "Logout " below if you are ready to end your current session.
+                        </div>
+                        <div class="modal-footer ">
+                            <button class="btn btn-secondary " type="button " data-dismiss="modal ">Cancel</button>
+                            <a class="btn btn-primary " href="login.html ">Logout</a>
                         </div>
                     </div>
                 </div>
+            </div>
 
-            </footer>
+        </footer>
 
-            <div id="addLanguage" class="overlay">
-                <div id="addLanguageMain">
-                    <div class="popup_header">
-                        <div id="popup_title" class="title">Añade tu lenguaje</div>
-                        <a href="#" class="close_button" onclick="cancel()">&times;</a>
-                        <!--Cierre del Pop-Up, con símbolo de cierre X-->
-                    </div>
-                    <div class="popup_body">
-                        <form id="addLanguageForm" method="post" name="addLanguageForm" id="new_event" enctype="multipart/form-data" target="_blank">
-                            Lenguaje <input type="text" name="title" value="" required><br><br>
-                            Nombre <input type="text" name="nombre" value="" required><br><br>
-                            <input type="button" value="Crear" onclick="createElem();">
-                            <input type="button" value="Cancelar" onclick="cancel();">
-                        </form>
-                        <!--Contenido editable-->
-                    </div>
+        <div id="addLanguage" class="overlay">
+            <div id="addLanguageMain">
+                <div class="popup_header">
+                    <div id="popup_title" class="title">Añade tu lenguaje</div>
+                    <a href="#" class="close_button" onclick="cancel('addLanguageForm', 'addLanguage');">&times;</a>
+                    <!--Cierre del Pop-Up, con símbolo de cierre X-->
+                </div>
+                <div class="popup_body">
+                    <form id="addLanguageForm" method="post" name="addLanguageForm" id="new_event"
+                        enctype="multipart/form-data" target="_blank">
+                        Lenguaje <input type="text" name="title" value="" required><br><br>
+                        Nombre <input type="text" name="nombre" value="" required><br><br>
+                        <input type="button" value="Crear" onclick="createElem();">
+                        <input type="button" value="Cancelar" onclick="cancel('addLanguageForm', 'addLanguage');">
+                    </form>
+                    <!--Contenido editable-->
                 </div>
             </div>
+        </div>
+
+        <div id="addCode" class="overlay">
+            <div id="addCodeMain">
+                <div class="popup_header">
+                    <div id="popup_title" class="title">Nueva ventana</div>
+                    <a href="#" class="close_button" onclick="cancel('addCodeForm', 'addCode')">&times;</a>
+                    <!--Cierre del Pop-Up, con símbolo de cierre X-->
+                </div>
+                <div class="popup_body">
+                    <form id="addCodeForm" method="post" name="addCodeForm" id="new_event"
+                        enctype="multipart/form-data" target="_blank">
+                        Nombre <input type="text" name="nombre" value="" required><br><br>
+                        <input type="button" value="Crear" onclick="createCode()">
+                        <input type="button" value="Cancelar" onclick="cancel('addCodeForm', 'addCode')">
+                    </form>
+                    <!--Contenido editable-->
+                </div>
+            </div>
+        </div>
 
 
 </body>
 
 
 
-    <!-- Demo scripts for this page-->
-    <script src="js/demo/datatables-demo.js"></script>
-    <script src="js/demo/chart-area-demo.js"></script>
+<!-- Demo scripts for this page-->
+<script src="js/demo/datatables-demo.js"></script>
+<script src="js/demo/chart-area-demo.js"></script>
 
-    <!--Scripts para los editores de texto y sus distintos estilos-->
-    <script src="ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<!--Scripts para los editores de texto y sus distintos estilos-->
+<script src="ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 
 </body>
 
