@@ -1,22 +1,28 @@
 
 #logo img{
   height: auto;
-  width: 10rem;
+  width: 100%;
 }
 
 #logo{
-  position: fixed;
-  top: 100px;
-  left: 890px;
+  position: relative;
+  margin-top: 8%;
+  top: 19%;
+  margin-left: 33%;
+  margin-right: 33%;
+  align-content: center;
 }
 
-#frase{
-  position: fixed;
-  width: 300px;
-  top: 20%;
-  left: 64%;
+.frase_div{
+  position: relative;
+  text-align: center;
+  margin-top: 22%;
+}
+#frase_p{
   color: #fff;
   font-size: 25px;
+  margin-right: 33%;
+  margin-left: 33%;
 }
 
 .container {
@@ -28,7 +34,7 @@
 }
 
 #signin{
-  margin-top:40%;
+  margin-top:5%;
 }
 
 #register{
@@ -66,7 +72,6 @@ a:active {
 a:hover {
   color:rgb(179, 179, 179);
 }
-
 
 #fondo{
   position: fixed;
@@ -279,6 +284,29 @@ p a:hover {
   transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  #fondo{
+    display: none;
+  }
+  #main{
+    width: 100%;
+  }
+  #signin{
+    margin-top:5%;
+  }
+  .frase_div{
+    position: relative;
+    text-align: center;
+    margin-top: 40%;
+  }
+  #logo{
+    position: relative;
+    top: 19%;
+    margin-left: 33%;
+    margin-right: 33%;
+    align-content: center;
+  }
+}
 
   
