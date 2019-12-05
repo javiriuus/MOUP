@@ -178,7 +178,26 @@ var count = 3; //Contador de repositorios de codigo
 var isParent = ''; //Variable para almacenar que repositorio de codigo vamos a editar
 var idCurrent = ''; //Variable para almacenar qué boton de añadir hemos pulsado
 
+// // $("#sidebarToggle").on('click', function(e){
+// $(document).ready(function(){
+//     var slide = function (){
+//     //Alto del elemento
+//     var ancho=$('#navigation').width();
+//     $('#editor_java').css({'left': ancho});
+//     };
+//     $('#editor_java').on('change keyup paste', slide);
+//     setTimeout(slide, 500);
+// })
+
 function openForm(value, language, id) { //Abre el formulario
+    document.getElementById("addLanguageForm").reset();
+    document.getElementById("addCodeForm").reset();
+    var elem = document.getElementById("addLanguage");
+    elem.style.display = "none";
+    elem = document.getElementById("addCode");
+    elem.style.display = "none";
+
+    
     var elem = document.getElementById(value);
     elem.style.display = "block";
     languageAux = language;
@@ -303,31 +322,6 @@ function createElem() {
         var elem = document.getElementById("addLanguage");
         elem.style.display = "none";
 }
-//Configuraciones y llamadas a los ditintos modos del editor, que proporcionan soporte para cada uno de los lenguajes admitidos
-//Hemos decidido dar soporte a los lenguajes Python, Javascript, Ruby, Java, Css y Swift
-// window.eh = ace.edit("editor_python");
-// eh.setTheme("ace/theme/cobalt");
-// eh.session.setMode("ace/mode/python");
-
-// window.ec = ace.edit("editor_js");
-// ec.setTheme("ace/theme/cobalt");
-// ec.session.setMode("ace/mode/javascript");
-
-// window.eh = ace.edit("editor_ruby");
-// eh.setTheme("ace/theme/cobalt");
-// eh.session.setMode("ace/mode/ruby");
-
-// window.eh = ace.edit("editor_java");
-// eh.setTheme("ace/theme/cobalt");
-// eh.session.setMode("ace/mode/java");
-
-// window.eh = ace.edit("editor_css");
-// eh.setTheme("ace/theme/cobalt");
-// eh.session.setMode("ace/mode/css");
-
-// window.eh = ace.edit("editor_swift");
-// eh.setTheme("ace/theme/cobalt");
-// eh.session.setMode("ace/mode/swift");
 
 //Funcion para mostrar el codigo
 function openCode(codigo, lenguaje){

@@ -12,8 +12,8 @@
     <title>SB Admin - Dashboard</title>
 
     <!--LA SIGUIENTE HOJA DE ESTILOS CSS Y EL SIGUIENTE SCRIPT JS CONTIENE EL CÓDIGO DESARROLLADO
-    ÍNTEGRAMENTE POR NOSOTROS Y NO PROPORCIONADO POR EL FRAMEWORK DE BOOTSTRAP UTILIZADO. HEMOS 
-    DECIDIDO MOSTRALO DE ESTA MANERA PARA FACILITAR LA CORRECIÓN DE NUESTRO CASO PRÁCTICO, AUNQUE 
+    ÍNTEGRAMENTE POR NOSOTROS Y NO PROPORCIONADO POR EL FRAMEWORK DE BOOTSTRAP UTILIZADO. HEMOS
+    DECIDIDO MOSTRALO DE ESTA MANERA PARA FACILITAR LA CORRECIÓN DE NUESTRO CASO PRÁCTICO, AUNQUE
     NO EXISTIRÍA PROBLEMA ALGUNO SI SE QUISIERA UNIFICAR CON LOS CSS Y JS DEL FRAMEWORK-->
 
     <!--Nuestra propia hoja de estilos con todo lo que hemos diseñado nosotros-->
@@ -34,27 +34,9 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin.css" rel="stylesheet">
     <link rel='stylesheet' href='css/stylesheet.css'>
+    <!-- <link rel='stylesheet' href='css/styleLog.css'> -->
 
-    <script defer src='js/script.js'></script>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.js"></script>
-
-    <!-- Page level plugin JavaScript-->
-    <script src="vendor/chart.js/Chart.js"></script>
-    <script src="vendor/datatables/jquery.dataTables.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin.js"></script>
-
-    <!-- Demo scripts for this page-->
-    <script src="js/demo/datatables-demo.js"></script>
-    <script src="js/demo/chart-area-demo.js"></script>
 
 </head>
 
@@ -63,7 +45,7 @@
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
         <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
-            <i class="fas fa-bars"></i>
+            <i class="fas fa-bars" onclick="cambiarTamaño()"></i>
         </button>
         <a class="navbar-brand mr-1" href="index.html">MOUP</a>
 
@@ -189,7 +171,7 @@
                 </div>
             </div>
 
-            
+
             <!-- Botón para ir arriba del todo-->
             <a class="scroll-to-top rounded " href="#page-top ">
                 <i class="fas fa-angle-up "></i>
@@ -219,55 +201,66 @@
         </footer>
 
         <div id="addLanguage" class="overlay">
-            <div id="addLanguageMain">
-                <div class="popup_header">
-                    <div id="popup_title" class="title">Añade tu lenguaje</div>
-                    <a href="#" class="close_button" onclick="cancel('addLanguageForm', 'addLanguage');">&times;</a>
-                    <!--Cierre del Pop-Up, con símbolo de cierre X-->
-                </div>
-                <div class="popup_body">
-                    <form id="addLanguageForm" method="post" name="addLanguageForm" id="new_event"
-                        enctype="multipart/form-data" target="_blank">
-                        Lenguaje <input type="text" name="title" value="" required><br><br>
-                        Nombre <input type="text" name="nombre" value="" required><br><br>
-                        <input type="button" value="Crear" onclick="createElem();">
-                        <input type="button" value="Cancelar" onclick="cancel('addLanguageForm', 'addLanguage');">
+            <div class="demo">
+                <div class="login_reg">
+                    <div class="tituloMoup">NUEVO</div>
+                    <form id="addLanguageForm" name="addLanguageForm" id="new_event">
+                        <div class="login__form">
+                            <div class="login__row">
+                            <input name="nombre" value="" type="text" class="login__input name" placeholder="Nombre" required />
+                            </div>
+                            <div class="login__row">
+                            <input class="login__input pass" placeholder="Lenguaje" type="text" name="title" value="" required/>
+                            </div>
+                        <button id="crear" type="button" class="login__submit" onclick="createElem();">Crear</button>
+                        <button id="cancelar" type="button" class="login__submit" onclick="cancel('addLanguageForm', 'addLanguage');">Cancelar</button>
+                        </div>
                     </form>
-                    <!--Contenido editable-->
                 </div>
             </div>
         </div>
 
         <div id="addCode" class="overlay">
-            <div id="addCodeMain">
-                <div class="popup_header">
-                    <div id="popup_title" class="title">Nueva ventana</div>
-                    <a href="#" class="close_button" onclick="cancel('addCodeForm', 'addCode')">&times;</a>
-                    <!--Cierre del Pop-Up, con símbolo de cierre X-->
-                </div>
-                <div class="popup_body">
-                    <form id="addCodeForm" method="post" name="addCodeForm" id="new_event"
-                        enctype="multipart/form-data" target="_blank">
-                        Nombre <input type="text" name="nombre" value="" required><br><br>
-                        <input type="button" value="Crear" onclick="createCode()">
-                        <input type="button" value="Cancelar" onclick="cancel('addCodeForm', 'addCode')">
+            <div class="demo">
+                <div class="login_reg">
+                    <div class="tituloMoup">NUEVO</div>
+                    <form id="addCodeForm" name="addCodeForm" id="new_event">
+                        <div class="login__form">
+                            <div class="login__row">
+                            <input name="nombre" value="" type="text" class="login__input name" placeholder="Nombre" required />
+                            </div>
+                        <button id="crear" type="button" class="login__submit" onclick="createCode()">Crear</button>
+                        <button id="cancelar" type="button" class="login__submit" onclick="cancel('addCodeForm', 'addCode')">Cancelar</button>
+                        </div>
                     </form>
-                    <!--Contenido editable-->
                 </div>
             </div>
         </div>
 
 
-</body>
+        <script defer src='js/script.js'></script>
 
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin.min.js"></script>
 
-<!-- Demo scripts for this page-->
-<script src="js/demo/datatables-demo.js"></script>
-<script src="js/demo/chart-area-demo.js"></script>
+         <!-- Demo scripts for this page-->
+         <script src="js/demo/datatables-demo.js"></script>
+         <script src="js/demo/chart-area-demo.js"></script>
 
-<!--Scripts para los editores de texto y sus distintos estilos-->
-<script src="ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+        <!-- Page level plugin JavaScript-->
+        <script src="vendor/chart.js/Chart.js"></script>
+        <script src="vendor/datatables/jquery.dataTables.js"></script>
+        <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+
+        <!--Scripts para los editores de texto y sus distintos estilos-->
+        <script src="ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 
 </body>
 
