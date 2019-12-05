@@ -1,3 +1,6 @@
+var count = 0;
+
+
 $(document).ready(function() {
   
   var animating = false,
@@ -18,35 +21,67 @@ $(document).ready(function() {
     $ripple.css({top: y, left: x});
     elem.append($ripple);
   };
-  
-  // $(document).on("click", ".login__submit", function(e) {
-  //   if (animating) return;
-  //   animating = true;
-  //   var that = this;
-  //   ripple($(that), e);
-  //   $(that).addClass("processing");
-  //   setTimeout(function() {
-  //     $(that).addClass("success");
-  //     setTimeout(function() {
-  //       $app.show();
-  //       $app.css("top");
-  //       $app.addClass("active");
-  //     }, submitPhase2 - 70);
-  //     setTimeout(function() {
-  //       $login.hide();
-  //       $login.addClass("inactive");
-  //       $register.hide();
-  //       $register.addClass("inactive");
-  //       animating = false;
-  //       $(that).removeClass("success processing");
-
-  //     }, submitPhase2);
-  //   }, submitPhase1);
-  //   // openWindow();
-  // });
 
 });
 
-// function openWindow() {
-//   window.open("./index.html");
-// }
+function createCookie() { //Funcion para registrarse
+  var email = document.register.email.value;
+  var password = document.register.password.value;
+  var confirm_pass = document.register.confirm_pass.value;
+
+  var lista = document.cookie.split(";");
+
+  if(password!=confirm_pass){
+    alert("Las contraseñas no coinciden");
+    document.getElementById("register").reset();
+    window.open('#', "_self");
+    return false;
+  }
+
+  for (i in lista) {
+      if (lista[i].search(email) > -1) { //si encontramos el usuario paramos de buscar
+          alert("Ese nombre de usuario ya existe");
+          document.getElementById("register").reset();
+          window.open('#', "_self");
+          return false;
+      }
+  }
+  //si salimos del bucle significa que no hemos encontrado ninguna coincidencia por lo que podemos crear el usuario
+  document.cookie = "email" + count + "=" + email + ";"
+  document.cookie = "password" + count + "=" + password + ";"
+  document.getElementById("register").reset();
+  count = count + 1;
+  window.open("Login.html", "_self");
+
+  return false;
+}
+
+
+function iniciar(){ //Función para iniciar sesion
+  var email = document.signIn.email.value;
+  var password = document.signIn.password.value;
+  var lista = document.cookie.split(";");
+  var busquedaE = -1;
+  var busquedaP = -1;
+
+  for (i in lista) {
+      if (lista[i].search(email) > -1) {
+          busquedaE = lista[i].search(email);
+      }
+      if (lista[i].search(password) > -1) {
+          busquedaP = lista[i].search(password);
+      }
+
+  }
+
+  if (busquedaE > -1 && busquedaP > -1) {   
+    
+    document.getElementById("signIn").reset();
+    window.open("index.html", "_self");
+    return false;
+  } else {
+    alert("El usuario o la contraseña son incorrectos");
+    return false;
+  }
+
+}

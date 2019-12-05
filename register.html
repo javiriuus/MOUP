@@ -3,41 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <title>Registro</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"><link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'><link rel="stylesheet" href="./css/styleLog.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+  <link rel="stylesheet" href="./css/styleLog.css">
 
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<div class="cont">
-  <div class="demo">
-    <div class="login_reg">
-      <div class="tituloMoup">moup</div>
-      <div class="login__form">
-        <div class="login__row">
-          <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
-            <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
-          </svg>
-          <input type="text" class="login__input name" placeholder="Email"/>
-        </div>
-        <div class="login__row">
-          <svg class="login__icon pass svg-icon" viewBox="0 0 20 20">
-            <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
-          </svg>
-          <input type="password" class="login__input pass" placeholder="Contraseña"/>
-        </div>
-        <div class="login__row">
-            <svg class="login__icon pass svg-icon" viewBox="0 0 20 20">
-              <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
-            </svg>
-            <input type="password" class="login__input pass" placeholder="Confirmar Contraseña"/>
-        </div>
-        <a href="index.html"><button type="button" class="login__submit">Registrar</button></a>
-        <p class="login__signup">¿Ya tienes cuenta? &nbsp;<a href="Login.html">Iniciar Sesion</a></p>
+  <div class="cont">
+    <div class="demo">
+      <div class="login_reg">
+        <div class="tituloMoup">moup</div>
+          <form id="register" name="register" onsubmit="return createCookie();">
+            <div class="login__form">
+              <div class="login__row">
+                <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
+                  <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
+                </svg>
+                <input name="email" value="" type="email" class="login__input name" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required/>
+              </div>
+              <div class="login__row">
+                <svg class="login__icon pass svg-icon" viewBox="0 0 20 20">
+                  <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
+                </svg>
+                <input name="password" value="" type="password" class="login__input pass" placeholder="Contraseña" pattern="[A-Za-z0-9]{8,}" title="La contraseña debe tener 8 caracteres e incluir numeros" required/>
+              </div>
+              <div class="login__row">
+                  <svg class="login__icon pass svg-icon" viewBox="0 0 20 20">
+                    <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
+                  </svg>
+                  <input name="confirm_pass" value="" type="password" class="login__input pass" placeholder="Confirmar Contraseña" pattern="[A-Za-z0-9]{8,}" title="La contraseña debe tener 8 caracteres e incluir numeros" required/>
+              </div>
+              <button type="submit" class="login__submit">Registrar</button>
+              <p class="login__signup">¿Ya tienes cuenta? &nbsp;<a href="Login.html">Iniciar Sesion</a></p>
+            </div>
+          </form>
       </div>
     </div>
   </div>
-</div>
 <!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./js/scriptLog.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script  src="./js/scriptLog.js"></script>
 </body>
 </html>
