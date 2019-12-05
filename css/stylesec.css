@@ -1,7 +1,13 @@
-
+#cuerpo{
+    margin-left: 25px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.preguntas{
+    margin-left: 25px;
+}
 #content-wrapper .seccion h1{
-    /**color:#AEB3BF;**/
-    color: #212529;
+    color: #03A696;
+    /* color: #212529; */
     /**color: #667380;**/
     /**color: #15215C;**/
     margin-left: 20px;
