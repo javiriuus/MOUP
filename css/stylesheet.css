@@ -89,17 +89,16 @@ a:hover {
     text-decoration: none;
 }
  /*Estilos para cada uno de los leguajes de programación admitidos, todos ellos disponen de display none para seleccionar cuál se ve*/
- #editor{
+#editor{
   display: none;
 }
 
 #editor_js { 
-  width: calc(100% - 20px);
   position: absolute;
   top: 74px;
-  /*right: 0;*/
+  right: 0;
   bottom: 80px;
-  /* left: 225px; */
+  left: 225px;
 }
 #editor_python{ 
   position: absolute;
@@ -119,9 +118,9 @@ a:hover {
 #editor_java{ 
   position: absolute;
   top: 74px;
-  /* right: 0; */
+  right: 0;
   bottom: 80px;
-  /* left: 225px; */
+  left: 225px; 
 }
 
 #editor_css{ 
@@ -138,4 +137,51 @@ a:hover {
   bottom: 80px;
   left: 225px;
 }
+
+@media (min-width: 300px) {
+  #editor_js {
+    left: 90px;
+  }
+  #editor_python{ 
+    left: 90px;
+  }
+  
+  #editor_ruby{
+    left: 90px;
+  }
+  #editor_java{
+    left: 90px; 
+  }
+  
+  #editor_css{ 
+    left: 90px;
+  }
+  #editor_swift{ 
+    left: 90px;
+  }
+}
+
+@media (min-width: 768px) {
+  #editor_js {
+    left: 225px;
+  }
+  #editor_python{ 
+    left: 225px;
+  }
+  
+  #editor_ruby{
+    left: 225px;
+  }
+  #editor_java{
+    left: 225px; 
+  }
+  
+  #editor_css{ 
+    left: 225px;
+  }
+  #editor_swift{ 
+    left: 225px;
+  }
+}
+
   
