@@ -10,7 +10,7 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-:root {
+ :root {
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -67,7 +67,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff;
+  background-color: #003C4A;
 }
 
 [tabindex="-1"]:focus {
@@ -2614,8 +2614,8 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: #00e1ff;
+  border-color: #00aac05b;
 }
 
 .btn-primary:hover {
@@ -3298,7 +3298,7 @@ input[type="button"].btn-block {
   color: #212529;
   text-align: left;
   list-style: none;
-  background-color: #fff;
+  background-color: #006075;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
@@ -3462,7 +3462,7 @@ input[type="button"].btn-block {
   padding: 0.25rem 1.5rem;
   clear: both;
   font-weight: 400;
-  color: #212529;
+  color: #fff;
   text-align: inherit;
   white-space: nowrap;
   background-color: transparent;
@@ -3470,9 +3470,9 @@ input[type="button"].btn-block {
 }
 
 .dropdown-item:hover, .dropdown-item:focus {
-  color: #16181b;
+  color: #fff;
   text-decoration: none;
-  background-color: #f8f9fa;
+  background-color: #0084a1;
 }
 
 .dropdown-item.active, .dropdown-item:active {
@@ -3728,6 +3728,7 @@ input[type="button"].btn-block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  color: var(--pink);
 }
 
 .input-group-prepend .btn,
@@ -4446,16 +4447,26 @@ input[type="button"].btn-block {
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
+@font-face{
+  font-family: themillion;
+  src:url(../vendor/fontawesome-free/webfonts/SWATRG__.TTF);
+  
+}
+
 
 .navbar-brand {
   display: inline-block;
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
   margin-right: 1rem;
-  font-size: 1.25rem;
+  margin-left: 1rem;
+  font-size: 2rem;
   line-height: inherit;
   white-space: nowrap;
+  font-family: themillion;
 }
+
+
 
 .navbar-brand:hover, .navbar-brand:focus {
   text-decoration: none;
@@ -4873,7 +4884,7 @@ input[type="button"].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: rgba(0, 35, 49, 0.26);
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
@@ -6985,7 +6996,8 @@ button.bg-light:focus {
 }
 
 .bg-dark {
-  background-color: #343a40 !important;
+  /* background-color: #343a40 !important; */
+  background-color: #048ABF !important;
 }
 
 a.bg-dark:hover, a.bg-dark:focus,
@@ -10670,7 +10682,7 @@ body {
 
 .sidebar {
   width: 90px !important;
-  background-color: #212529;
+  background-color: #011F26;
   min-height: calc(100vh - 56px);
 }
 
@@ -10889,12 +10901,13 @@ footer.sticky-footer {
   bottom: 0;
   width: calc(100% - 90px);
   height: 80px;
-  background-color: #e9ecef;
+  background-color: #04587D;
 }
 
 footer.sticky-footer .copyright {
   line-height: 1;
   font-size: 0.8rem;
+  color: rgb(179, 179, 179);
 }
 
 @media (min-width: 768px) {
