@@ -65,11 +65,12 @@ function iniciar(){ //Función para iniciar sesion
   var busquedaP = -1;
 
   for (i in lista) {
-      if (lista[i]==email) {
+    var aux = lista[i].split('=');
+      if (aux[1]==email) {
           busquedaE = 1;
           
       }
-      if (lista[i] == password) {
+      if (aux[1] == password) {
           busquedaP = 1;
       }
   }
@@ -78,7 +79,6 @@ function iniciar(){ //Función para iniciar sesion
     window.open("index.html", "_self");
     return false;
   } else {
-    alert('busquedaE: ' + busquedaE + '     busquedaP: ' + busquedaP);
     alert("El usuario o la contraseña son incorrectos");
     return false;
   }
