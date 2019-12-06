@@ -65,21 +65,20 @@ function iniciar(){ //Función para iniciar sesion
   var busquedaP = -1;
 
   for (i in lista) {
-      if (lista[i].search(email) > -1) {
-          busquedaE = lista[i].search(email);
+      if (lista[i]==email) {
+          busquedaE = 1;
+          
       }
-      if (lista[i].search(password) > -1) {
-          busquedaP = lista[i].search(password);
+      if (lista[i] == password) {
+          busquedaP = 1;
       }
-
   }
-
   if (busquedaE > -1 && busquedaP > -1) {   
-    
     document.getElementById("signIn").reset();
     window.open("index.html", "_self");
     return false;
   } else {
+    alert('busquedaE: ' + busquedaE + '     busquedaP: ' + busquedaP);
     alert("El usuario o la contraseña son incorrectos");
     return false;
   }
