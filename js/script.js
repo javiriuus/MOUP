@@ -225,6 +225,7 @@ function createCode(){
     document.getElementById("addCodeForm").reset();
     var elem = document.getElementById("addCode");
     elem.style.display = "none";  
+    return false;
 }
 
 function createElem() {
@@ -311,6 +312,8 @@ function createElem() {
         document.getElementById("addLanguageForm").reset();
         var elem = document.getElementById("addLanguage");
         elem.style.display = "none";
+        return false;
+
 }
 
 //Funcion para mostrar el codigo

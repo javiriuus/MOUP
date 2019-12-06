@@ -196,7 +196,7 @@
             <div class="demo">
                 <div class="login_reg">
                     <div class="tituloMoup">NUEVO</div>
-                    <form id="addLanguageForm" name="addLanguageForm" id="new_event">
+                    <form id="addLanguageForm" name="addLanguageForm" id="new_event" onsubmit="return createElem()">
                         <div class="login__form">
                             <div class="login__row">
                             <input name="nombre" value="" type="text" class="login__input name" placeholder="Nombre" required />
@@ -204,7 +204,7 @@
                             <div class="login__row">
                             <input class="login__input pass" placeholder="Lenguaje" type="text" name="title" value="" required/>
                             </div>
-                        <button id="crear" type="button" class="login__submit" onclick="createElem();">Crear</button>
+                        <button id="crear" type="submit" class="login__submit" >Crear</button>
                         <button id="cancelar" type="button" class="login__submit" onclick="cancel('addLanguageForm', 'addLanguage');">Cancelar</button>
                         </div>
                     </form>
@@ -216,12 +216,12 @@
             <div class="demo">
                 <div class="login_reg">
                     <div class="tituloMoup">NUEVO</div>
-                    <form id="addCodeForm" name="addCodeForm" id="new_event">
+                    <form id="addCodeForm" name="addCodeForm" id="new_event" onsubmit="return createCode()">
                         <div class="login__form">
                             <div class="login__row">
                             <input name="nombre" value="" type="text" class="login__input name" placeholder="Nombre" required />
                             </div>
-                        <button id="crear" type="button" class="login__submit" onclick="createCode()">Crear</button>
+                        <button id="crear" type="submit" class="login__submit">Crear</button>
                         <button id="cancelar" type="button" class="login__submit" onclick="cancel('addCodeForm', 'addCode')">Cancelar</button>
                         </div>
                     </form>
