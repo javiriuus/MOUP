@@ -6,8 +6,7 @@
 
 #logo{
   position: relative;
-  margin-top: 8%;
-  top: 19%;
+  margin-top: 27%;
   margin-left: 33%;
   margin-right: 33%;
   align-content: center;
@@ -16,7 +15,7 @@
 .frase_div{
   position: relative;
   text-align: center;
-  margin-top: 22%;
+  margin-top: 1%;
 }
 #frase_p{
   color: #fff;
@@ -298,14 +297,31 @@ p a:hover {
   .frase_div{
     position: relative;
     text-align: center;
-    margin-top: 40%;
+    margin-top: 7%;
   }
   #logo{
     position: relative;
-    top: 19%;
+    margin-top: 33%;
     margin-left: 33%;
     margin-right: 33%;
     align-content: center;
+  }
+}
+
+@media only screen and (max-width: 768px) { /*For tablets*/
+  #fondo{
+    display: none;
+  }
+  #main{
+    width: 100%;
+  }
+  #signin{
+    margin-top:7%;
+  }
+  .frase_div{
+    position: relative;
+    text-align: center;
+    margin-top: 5%;
   }
 }
 
