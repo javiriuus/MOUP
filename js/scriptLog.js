@@ -1,3 +1,5 @@
+// Este es el script para el inicio de sessionStorage, el registrarse, etc
+
 var count = 0;
 
 

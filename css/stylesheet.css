@@ -1,3 +1,5 @@
+/* Este css es para la parte de la pagina prinipal que no esta en la plantilla */
+
 a:link {
   color:rgb(179, 179, 179);
 }
@@ -45,7 +47,6 @@ a:hover {
   right: 0;
   bottom: 80px;
   left: 225px; 
-  /*width: calc(100% - 225px); */
 }
 
 #editor_css{ 

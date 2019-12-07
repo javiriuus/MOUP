@@ -39,7 +39,7 @@
 <body id="page-top">
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-
+        <!-- Logo -->
         <a class="navbar-brand mr-1" href="index.html">MOUP</a>
 
         <!-- Navbar Search -->
@@ -55,13 +55,14 @@
             </div>
         </form>
 
-        <!-- Navbar -->
+        <!-- Barra de arriba -->
         <ul class="navbar-nav ml-auto ml-md-0">
             <li class="nav-item dropdown no-arrow mx-1">
                 <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-envelope fa-fw"></i>
                 </a>
+                <!-- Opciones de contacto -->
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
                     <a class="dropdown-item" href="#">Contacta con nosotros</a>
                     <a class="dropdown-item" href="#">Reportar errores</a>
@@ -73,6 +74,7 @@
                     aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-user-circle fa-fw"></i>
                 </a>
+                <!-- Opciones de usuario -->
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                     <a class="dropdown-item" href="#">Opciones</a>
                     <a class="dropdown-item" href="main.html">Cerrar Sesión</a>
@@ -84,26 +86,26 @@
 
     <div id="wrapper">
 
-        <!-- Sidebar -->
+        <!-- Columna del lado -->
         <ul class="sidebar navbar-nav" id="navigation" id="sortable">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
-                    <span>Java</span>
+                     <span>Java</span><!-- Codigo para Java -->
                 </a>
                 <div class="dropdown-menu" id='code1' aria-labelledby="pagesDropdown">
-                    <a class="dropdown-item" onclick="openCode('hello', 'java');">Hello World</a>
-                    <a class="dropdown-item" onclick="openCode('const', 'java');">Constructor</a>
-                    <a class="dropdown-item" id="addCode1" onclick="openForm('addCode', 'java', '1');">+ AÑADIR</a>
+                    <a class="dropdown-item" onclick="openCode('hello', 'java');">Hello World</a> <!-- Aparece el Hello World por defecto -->
+                    <a class="dropdown-item" onclick="openCode('const', 'java');">Constructor</a> <!-- Aparece el Constructor por defecto -->
+                    <a class="dropdown-item" id="addCode1" onclick="openForm('addCode', 'java', '1');">+ AÑADIR</a> <!-- Opcion para añadir nueva nota -->
                 </div>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
-                    <span>Python</span>
+                    <span>Python</span> <!-- Codigo para Python -->
                 </a>
                 <div class="dropdown-menu" id='code2' aria-labelledby="pagesDropdown">
-                    <a class="dropdown-item" onclick="openCode('hello', 'python');">Hello World</a>
+                    <a class="dropdown-item" onclick="openCode('hello', 'python');">Hello World</a> 
                     <a class="dropdown-item" onclick="openCode('const', 'python');">Constructor</a>
                     <a class="dropdown-item" id="addCode2" onclick="openForm('addCode', 'python', '2');">+ AÑADIR</a>
                 </div>
@@ -111,7 +113,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
-                    <span>CSS</span>
+                    <span>CSS</span> <!-- Codigo para CSS -->
                 </a>
                 <div class="dropdown-menu" id='code3' aria-labelledby="pagesDropdown">
                     <a class="dropdown-item" onclick="openCode('example', 'css');">Example</a>
@@ -120,7 +122,7 @@
             </li>
             <li class="nav-item dropdown" id="add" onclick="openForm('addLanguage');">
                 <div class="nav-link" id="pagesDropdown" role="button">
-                    <span>NUEVO LENGUAJE</span>
+                    <span>NUEVO LENGUAJE</span> <!-- Opcion para añadir uno nuevo -->
                 </div>
             </li>
         </ul>
@@ -229,7 +231,7 @@
             </div>
         </div>
 
-
+        <!-- Referencias a javascript y jquery -->
         <script defer src='js/script.js'></script>
 
         <!-- Bootstrap core JavaScript-->

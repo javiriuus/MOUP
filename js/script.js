@@ -1,3 +1,5 @@
+// Declaramos las variables que utilizaremos para crear las notas por defecto
+
 var vacioPython = `<div id="codigo"><div id="editor_python">
 </div></div>`;
 var helloPython = `<div id="codigo"><div id="editor_python">def: hello(name):
@@ -178,7 +180,7 @@ var count = 3; //Contador de repositorios de codigo
 var isParent = ''; //Variable para almacenar que repositorio de codigo vamos a editar
 var idCurrent = ''; //Variable para almacenar qué boton de añadir hemos pulsado
 
-
+// Funciones usadas
 function openForm(value, language, id) { //Abre el formulario
     document.getElementById("addLanguageForm").reset();
     document.getElementById("addCodeForm").reset();

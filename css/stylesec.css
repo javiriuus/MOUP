@@ -1,3 +1,5 @@
+/* Este es el css para las preguntas frecuentes y la politica de privacidad */
+
 #cuerpo{
     margin-left: 25px;
     font-family: 'Courier New', Courier, monospace;
@@ -7,9 +9,6 @@
 }
 #content-wrapper .seccion h1{
     color: #03A696;
-    /* color: #212529; */
-    /**color: #667380;**/
-    /**color: #15215C;**/
     margin-left: 20px;
     margin-bottom: 20px;
     margin-top: 20px;
@@ -21,9 +20,7 @@
     margin-left: 20px;
     margin-bottom: 20px;
     margin-right: 20px;
-    /**color: #667380;**/
     color: #DCE6DC;
-    /**background: #0A0A0A;**/
     font-size: 15px;
 }
 #content-wrapper .seccion p{
@@ -36,7 +33,6 @@
 #content-wrapper #titulo p{
     text-align: center;
     font-size: 50px;
-    /**color: #212529;**/
     color:#AEB3BF;
     margin-right: 20px;
 }
