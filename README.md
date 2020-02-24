@@ -1,4 +1,4 @@
-Comprobamos si funciona
+This project was developed by: Saray García de la Rosa (saraygrjim), Javier Llarena Sánchez (javiriuus), María Morán Luaces (MiaML2) and Mario Lozano Cortés (SrLozano)(Lozano6219)
 
 # [Start Bootstrap - SB Admin](https://startbootstrap.com/template-overviews/sb-admin/)
 
